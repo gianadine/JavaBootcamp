@@ -1,9 +1,10 @@
 /**
- * Created by hazel on 1/27/14.
+ * Created by hazel on 1/28/14.
  */
+
 import java.lang.*;
 
-public class MachineProb1 {
+public class MachineProblem1 {
     public static void main(String[] args){
         int[] number = {0,2,3,4,9,22,17,8,75,64,0,22,19,7,29,67,9,21,17,22,9};
         double mean, median;
@@ -46,9 +47,9 @@ public class MachineProb1 {
             for(int r=0; r<length; r++){
                 if(hold[r]>hold[h])                         // used to sort the array to arrange in ascending order
                 {
-                temp=hold[r];
-                hold[r] = hold[h];
-                hold[h] = temp;
+                    temp=hold[r];
+                    hold[r] = hold[h];
+                    hold[h] = temp;
                 }
             }
         }
@@ -88,7 +89,7 @@ public class MachineProb1 {
         int ctr=0;
         mode[0] = (-1);
         while(ctr<(length)){
-           holder = ctr+1;
+            holder = ctr+1;
             while((holder < length) && (hold[ctr] == hold[holder])){    //for checking if elements are still the same
                 holder++;
                 freqCtr++;
@@ -96,22 +97,22 @@ public class MachineProb1 {
                     break;
                 }
             }
-           ctr = holder -1;
-           if(freqCtr > presentModeFreq){                   //if current freq of elements is higher than the present Max freq
-               presentModeFreq = freqCtr;
-               tempMode = 0;
-               freqCtr =1;
-               mode[0]=hold[ctr];
-               mode[1]=(-1);
-           }else if((freqCtr == presentModeFreq) && (presentModeFreq != 1)){//if current freq of elements is equal to the present Max freq
-               freqCtr = 0;
-               tempMode++;
-               mode[tempMode] = hold[ctr];
-               mode[tempMode + 1] = (-1);
-           }else{                                           //if current freq of elements is less than the present Max freq
-               freqCtr =1;
-           }
-        ctr++;
+            ctr = holder -1;
+            if(freqCtr > presentModeFreq){                   //if current freq of elements is higher than the present Max freq
+                presentModeFreq = freqCtr;
+                tempMode = 0;
+                freqCtr =1;
+                mode[0]=hold[ctr];
+                mode[1]=(-1);
+            }else if((freqCtr == presentModeFreq) && (presentModeFreq != 1)){//if current freq of elements is equal to the present Max freq
+                freqCtr = 0;
+                tempMode++;
+                mode[tempMode] = hold[ctr];
+                mode[tempMode + 1] = (-1);
+            }else{                                           //if current freq of elements is less than the present Max freq
+                freqCtr =1;
+            }
+            ctr++;
         }
         System.out.println();
         System.out.print("Mode: ");                         //printing of mode of the array
@@ -153,9 +154,10 @@ public class MachineProb1 {
                         System.out.print(number[i] + ", ");
                     }
                 }
-            iteration++;
+                iteration++;
             }
         }
         System.out.println();
     }
 }
+
