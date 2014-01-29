@@ -9,13 +9,12 @@ import java.util.Random;
 
 public class Java_Project
 {
-
     public static void main(String[] args)
     {
         int[] items=new int[20];                                                                                        //generation of random and unordered values for array
         Random var= new Random();
 
-        int mean;                                                                                                       //Declarations for Mean//
+        double mean;                                                                                                       //Declarations for Mean//
         int sumOfItems = 0;
 
         double median;                                                                                                  //Declaration for median//
@@ -27,7 +26,6 @@ public class Java_Project
         int testCounter=0;
 
         int count;                                                                                                      //Declarations for main counters
-        int newCnt = 0;
         int temp;                                                                                                       //Declarations for Bubble Sort //
 
         for(int randCount=0;randCount<items.length;randCount++)                                                         //Random Array Initialization//
@@ -40,7 +38,11 @@ public class Java_Project
         System.out.print("\tInitial values of unordered array: \t\t");                                                  //Display of given Array//
         for(int unorderedListCount = 0;unorderedListCount<items.length;unorderedListCount++)
         {
-            System.out.print(items[unorderedListCount]+"\t");
+            System.out.print(items[unorderedListCount]);
+            if(unorderedListCount<=18)
+            {
+                System.out.print(", ");
+            }
         }
         System.out.print("\n\n");
 
@@ -62,7 +64,11 @@ public class Java_Project
 
         for (int i=0; i < items.length; i++)
         {
-            System.out.print(items[i]+ "\t");
+            System.out.print(items[i]);
+            if(i<=18)
+            {
+                System.out.print(", ");
+            }
         }
         System.out.print("\n\n");                                                                                       //End of Bubble Sort //
                                                                                                                         //Codes for Mean, Median and Mode//
@@ -72,7 +78,7 @@ public class Java_Project
                     sumOfItems+= items[count];
                 }
 
-                mean = sumOfItems/items.length;
+                mean = (double)(sumOfItems/items.length);
                 System.out.println("Mean = " + mean);                                                                   //End of Mean//
 
                 middleOfItems = items.length/2;                                                                         //Start of Median//
@@ -126,7 +132,6 @@ public class Java_Project
         int[] array1=new int[20];
                 int[] array2=new int[20];
                 int finalModeCounter=-1;
-                int nextCounter = 0;
 
                         for (int testCountOne = 0; testCountOne < items.length; testCountOne++)
                         {
